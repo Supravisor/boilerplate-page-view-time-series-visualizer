@@ -8,7 +8,7 @@ register_matplotlib_converters()
 df = pd.read_csv('fcc-forum-pageviews.csv', index_col='date', parse_dates=True)
 
 # Clean data
-df = None
+df = df.dropna()
 
 
 def draw_line_plot():
