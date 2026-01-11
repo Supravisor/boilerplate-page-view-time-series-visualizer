@@ -54,6 +54,13 @@ def draw_box_plot():
     df_box['month'] = [d.strftime('%b') for d in df_box.date]
 
     # Draw box plots (using Seaborn)
+    fig, ax = plt.subplots(nrows=1, ncols=2, figsize=(15,5))
+    # figure one of year trend
+    ax1 = ax[0]
+    sns.boxplot(x='year', y='value', data=df_box, ax=ax1)
+    ax1.set_xlabel('Year')
+    ax1.set_ylabel('Page Views')
+    ax1.set_title('Year-wise Box Plot (Trend)')
 
 
 
