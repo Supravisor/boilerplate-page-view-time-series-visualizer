@@ -28,7 +28,10 @@ def draw_line_plot():
 
 def draw_bar_plot():
     # Copy and modify data for monthly bar plot
-    df_bar = None
+    df_bar = df.copy()
+    df_bar.reset_index(inplace=True)
+    df_bar['year'] = [d.year for d in df_bar.date]
+    df_bar['month'] = [d.month for d in df_bar.date]
 
     # Draw bar plot
 
